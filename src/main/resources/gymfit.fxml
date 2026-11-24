@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="800.0" prefWidth="1280.0"
+            style="-fx-background-color: #F4F6F9; -fx-font-family: 'Segoe UI', 'Inter', 'Arial', sans-serif;"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+
+
+    <top>
+        <VBox style="-fx-background-color: #FFFFFF; -fx-border-color: #E2E8F0; -fx-border-width: 0 0 1 0;">
+            <children>
+                <MenuBar style="-fx-background-color: #FFFFFF;">
+                    <menus>
+                        <Menu text="Archivo">
+                            <items>
+                                <MenuItem text="Nuevo socio">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem text="Guardar">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem text="Exportar socios..." />
+                                <SeparatorMenuItem />
+                                <MenuItem text="Salir">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu text="Editar">
+                            <items>
+                                <MenuItem text="Deshacer">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem text="Copiar">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem text="Pegar">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem text="Limpiar formulario" />
+                            </items>
+                        </Menu>
+                        <Menu text="Ver">
+                            <items>
+                                <MenuItem text="Actualizar lista">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="F5" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem text="Restablecer vista" />
+                            </items>
+                        </Menu>
+                        <Menu text="Herramientas">
+                            <items>
+                                <MenuItem text="Gestionar clases" />
+                                <MenuItem text="Tipos de cuota" />
+                            </items>
+                        </Menu>
+                        <Menu text="Ayuda">
+                            <items>
+                                <MenuItem text="Manual de usuario">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="F1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem text="Acerca de GymFit Manager" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+
+                <ToolBar style="-fx-background-color: #F8FAFC; -fx-padding: 8 16 8 16;">
+                    <items>
+                        <Button style="-fx-background-color: #1E40AF; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="+ Nuevo socio">
+                            <tooltip>
+                                <Tooltip text="Crear un nuevo socio (Ctrl+N)" />
+                            </tooltip>
+                        </Button>
+                        <Button style="-fx-background-color: #FFFFFF; -fx-text-fill: #0F172A; -fx-border-color: #CBD5E1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-cursor: hand;" text="Guardar">
+                            <tooltip>
+                                <Tooltip text="Guardar cambios actuales (Ctrl+S)" />
+                            </tooltip>
+                        </Button>
+                        <Button style="-fx-background-color: #FFFFFF; -fx-text-fill: #0F172A; -fx-border-color: #CBD5E1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-cursor: hand;" text="Exportar">
+                            <tooltip>
+                                <Tooltip text="Exportar listado de socios" />
+                            </tooltip>
+                        </Button>
+                        <Separator orientation="VERTICAL" />
+                        <Button style="-fx-background-color: #FFFFFF; -fx-text-fill: #0F172A; -fx-border-color: #CBD5E1; -fx-border-radius: 6; -fx-background-radius: 6; -fx-cursor: hand;" text="Ayuda">
+                            <tooltip>
+                                <Tooltip text="Abrir guía rápida de uso (F1)" />
+                            </tooltip>
+                        </Button>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label style="-fx-text-fill: #475569; -fx-font-weight: bold;" text="GymFit Manager · Gestión de Socios" />
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+
+
+    <center>
+        <HBox spacing="20.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+                <!-- FORMULARIO DE ALTA DE SOCIO -->
+                <VBox prefWidth="580.0" spacing="14.0"
+                      style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2E8F0; -fx-border-radius: 10; -fx-padding: 20;">
+                    <children>
+                        <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Alta de nuevo socio">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Label style="-fx-text-fill: #475569;" text="Completa los datos obligatorios para registrar al socio en el gimnasio." />
+
+                        <GridPane hgap="12.0" vgap="12.0">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="140.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="ALWAYS" prefWidth="360.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="32.0" />
+                                <RowConstraints minHeight="32.0" />
+                                <RowConstraints minHeight="32.0" />
+                                <RowConstraints minHeight="32.0" />
+                                <RowConstraints minHeight="32.0" />
+                                <RowConstraints minHeight="32.0" />
+                                <RowConstraints minHeight="32.0" />
+                                <RowConstraints minHeight="32.0" />
+                            </rowConstraints>
+                            <children>
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField promptText="Ej.: Ana" style="-fx-background-radius: 6; -fx-border-color: #CBD5E1; -fx-border-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Apellidos" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField promptText="Ej.: Pérez López" style="-fx-background-radius: 6; -fx-border-color: #CBD5E1; -fx-border-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Fecha de nacimiento" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <DatePicker promptText="dd/mm/aaaa (ej.: 15/05/1995)" style="-fx-background-radius: 6; -fx-border-color: #CBD5E1; -fx-border-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Sexo" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <HBox spacing="16.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <children>
+                                        <RadioButton text="Hombre">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="sexoGroup" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton text="Mujer" toggleGroup="$sexoGroup" />
+                                        <RadioButton text="Otro / Prefiero no decir" toggleGroup="$sexoGroup" />
+                                    </children>
+                                </HBox>
+
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Provincia" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                <ComboBox prefWidth="260.0" promptText="Ej.: Sevilla (41)" style="-fx-background-color: #FFFFFF; -fx-border-color: #CBD5E1; -fx-border-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Tipo de cuota" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                                <HBox spacing="12.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                    <children>
+                                        <RadioButton text="Básica">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="cuotaGroup" />
+                                            </toggleGroup>
+                                        </RadioButton>
+                                        <RadioButton text="Plus" toggleGroup="$cuotaGroup" />
+                                        <RadioButton text="Premium" toggleGroup="$cuotaGroup" />
+                                        <RadioButton text="Joven" toggleGroup="$cuotaGroup" />
+                                        <RadioButton text="Senior" toggleGroup="$cuotaGroup" />
+                                    </children>
+                                </HBox>
+
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Clase principal" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                                <ComboBox prefWidth="260.0" promptText="Ej.: Pilates / Spinning" style="-fx-background-color: #FFFFFF; -fx-border-color: #CBD5E1; -fx-border-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="IBAN" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                                <TextField promptText="Ej.: ES76 2100 0418 4012 3456 7890" style="-fx-background-radius: 6; -fx-border-color: #CBD5E1; -fx-border-radius: 6;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                            </children>
+                        </GridPane>
+
+                        <CheckBox text="Acepto la política de privacidad y el aviso de confirmación antes de borrar datos" />
+
+                        <Region VBox.vgrow="ALWAYS" />
+
+                        <!-- BOTONES BIEN DISTRIBUIDOS: ACCIÓN PRINCIPAL DESTACADA Y ACCIÓN DESTRUCTIVA SEPARADA -->
+                        <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-padding: 10 0 0 0; -fx-border-color: #E2E8F0; -fx-border-width: 1 0 0 0;">
+                            <children>
+                                <Button style="-fx-background-color: #1E40AF; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 8 18 8 18; -fx-background-radius: 6; -fx-cursor: hand;" text="Guardar socio" />
+                                <Button style="-fx-background-color: #FFFFFF; -fx-text-fill: #0F172A; -fx-border-color: #CBD5E1; -fx-padding: 8 14 8 14; -fx-border-radius: 6; -fx-background-radius: 6; -fx-cursor: hand;" text="Limpiar" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Button style="-fx-background-color: #DC2626; -fx-text-fill: #FFFFFF; -fx-font-weight: bold; -fx-padding: 8 14 8 14; -fx-background-radius: 6; -fx-cursor: hand;" text="Borrar todo (requiere confirmación)">
+                                    <tooltip>
+                                        <Tooltip text="Elimina los datos del formulario previa confirmación" />
+                                    </tooltip>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+
+                <VBox spacing="16.0" HBox.hgrow="ALWAYS">
+                    <children>
+
+                        <VBox spacing="10.0"
+                              style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-border-color: #E2E8F0; -fx-border-radius: 10; -fx-padding: 20;"
+                              VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label style="-fx-text-fill: #0F172A; -fx-font-weight: bold;" text="Listado de socios registrados">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label style="-fx-text-fill: #475569;" text="Haz clic derecho sobre una fila para ver las acciones disponibles." />
+
+                                <TableView VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn prefWidth="130.0" text="Nombre" />
+                                        <TableColumn prefWidth="160.0" text="Apellidos" />
+                                        <TableColumn prefWidth="130.0" text="F. Nacimiento" />
+                                        <TableColumn prefWidth="110.0" text="Cuota" />
+                                        <TableColumn prefWidth="110.0" text="Estado" />
+                                    </columns>
+
+                                    <contextMenu>
+                                        <ContextMenu>
+                                            <items>
+                                                <MenuItem text="Editar socio" />
+                                                <MenuItem text="Duplicar registro" />
+                                                <MenuItem text="Renovar cuota" />
+                                                <MenuItem text="Congelar suscripción" />
+                                                <MenuItem text="Copiar datos" />
+                                                <MenuItem text="Dar de baja" />
+                                            </items>
+                                        </ContextMenu>
+                                    </contextMenu>
+                                </TableView>
+                            </children>
+                        </VBox>
+
+
+                        <VBox spacing="6.0"
+                              style="-fx-background-color: #FEF2F2; -fx-background-radius: 8; -fx-border-color: #DC2626; -fx-border-width: 1; -fx-border-radius: 8; -fx-padding: 14;">
+                            <children>
+                                <Label style="-fx-text-fill: #991B1B; -fx-font-weight: bold;" text="No se ha podido guardar el socio: el campo IBAN no tiene un formato válido">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label wrapText="true" style="-fx-text-fill: #7F1D1D;"
+                                       text="Qué ha ocurrido: el IBAN introducido está incompleto o contiene caracteres no permitidos.&#10;Cómo solucionarlo: escribe un IBAN válido (por ejemplo, ES76 2100 0418 4012 3456 7890) y vuelve a pulsar «Guardar socio»." />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox style="-fx-background-color: #FFFFFF; -fx-border-color: #E2E8F0; -fx-border-width: 1 0 0 0; -fx-padding: 6 16 6 16;">
+            <children>
+                <Label style="-fx-text-fill: #475569;" text="Listo · Datos sincronizados" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Label style="-fx-text-fill: #64748B;" text="1280 × 800" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
